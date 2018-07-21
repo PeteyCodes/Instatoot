@@ -1,0 +1,15 @@
+# XCode
+*/build/*
+*.pbxuser
+!default.pbxuser
+*.xcworkspace
+!default.xcworkspace
+xcuserdata
+profile
+
+# OS X
+.DS_Store
+
+# Cocoapods
+Pods/*
+

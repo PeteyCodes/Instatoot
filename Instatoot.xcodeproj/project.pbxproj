@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4271EF0B6FD7AC7B9652191F /* Pods_Instatoot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2384FE67A8128FB8E02FBBFB /* Pods_Instatoot.framework */; };
 		9EA599C02103A54100ECD806 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA599BF2103A54100ECD806 /* AppDelegate.swift */; };
 		9EA599C22103A54100ECD806 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA599C12103A54100ECD806 /* ViewController.swift */; };
 		9EA599C52103A54100ECD806 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EA599C32103A54100ECD806 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2384FE67A8128FB8E02FBBFB /* Pods_Instatoot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instatoot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39661F027F0CB5AC9EC509E4 /* Pods-Instatoot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instatoot.release.xcconfig"; path = "Pods/Target Support Files/Pods-Instatoot/Pods-Instatoot.release.xcconfig"; sourceTree = "<group>"; };
 		9EA599BC2103A54100ECD806 /* Instatoot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instatoot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EA599BF2103A54100ECD806 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EA599C12103A54100ECD806 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		9EA599C62103A54300ECD806 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EA599C92103A54300ECD806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EA599CB2103A54300ECD806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C51F63E78E46EF0405098B02 /* Pods-Instatoot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instatoot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instatoot/Pods-Instatoot.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4271EF0B6FD7AC7B9652191F /* Pods_Instatoot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		534C4173A4A618702BE0D119 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2384FE67A8128FB8E02FBBFB /* Pods_Instatoot.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9EA599B32103A54100ECD806 = {
 			isa = PBXGroup;
 			children = (
 				9EA599BE2103A54100ECD806 /* Instatoot */,
 				9EA599BD2103A54100ECD806 /* Products */,
+				B19CD641995ECBAAB25F6FB0 /* Pods */,
+				534C4173A4A618702BE0D119 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +70,38 @@
 			isa = PBXGroup;
 			children = (
 				9EA599BF2103A54100ECD806 /* AppDelegate.swift */,
-				9EA599C12103A54100ECD806 /* ViewController.swift */,
-				9EA599C32103A54100ECD806 /* Main.storyboard */,
+				9EA599D12103AF2200ECD806 /* Data */,
+				9EA599D22103AF4300ECD806 /* Main */,
 				9EA599C62103A54300ECD806 /* Assets.xcassets */,
 				9EA599C82103A54300ECD806 /* LaunchScreen.storyboard */,
 				9EA599CB2103A54300ECD806 /* Info.plist */,
 			);
 			path = Instatoot;
+			sourceTree = "<group>";
+		};
+		9EA599D12103AF2200ECD806 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9EA599D22103AF4300ECD806 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9EA599C12103A54100ECD806 /* ViewController.swift */,
+				9EA599C32103A54100ECD806 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B19CD641995ECBAAB25F6FB0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C51F63E78E46EF0405098B02 /* Pods-Instatoot.debug.xcconfig */,
+				39661F027F0CB5AC9EC509E4 /* Pods-Instatoot.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +111,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9EA599CE2103A54300ECD806 /* Build configuration list for PBXNativeTarget "Instatoot" */;
 			buildPhases = (
+				642CE04FA5E1B678E7FBFC02 /* [CP] Check Pods Manifest.lock */,
 				9EA599B82103A54100ECD806 /* Sources */,
 				9EA599B92103A54100ECD806 /* Frameworks */,
 				9EA599BA2103A54100ECD806 /* Resources */,
+				C34B4495114B7AE5C5319CAD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +171,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		642CE04FA5E1B678E7FBFC02 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Instatoot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C34B4495114B7AE5C5319CAD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Instatoot/Pods-Instatoot-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MastodonKit/MastodonKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MastodonKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Instatoot/Pods-Instatoot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9EA599B82103A54100ECD806 /* Sources */ = {
@@ -278,11 +367,13 @@
 		};
 		9EA599CF2103A54300ECD806 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C51F63E78E46EF0405098B02 /* Pods-Instatoot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QVF42JML64;
 				INFOPLIST_FILE = Instatoot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,11 +387,13 @@
 		};
 		9EA599D02103A54300ECD806 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39661F027F0CB5AC9EC509E4 /* Pods-Instatoot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QVF42JML64;
 				INFOPLIST_FILE = Instatoot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
