@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.otf">
+            <string>Montserrat-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="Zgg-vD-V2e">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="v1C-Fz-1dA" customClass="LoginViewController" customModule="Instatoot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Q3-Rc-qpy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxy-uV-eYt">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzP-r2-J52">
+                                        <rect key="frame" x="161" y="11.5" width="53.5" height="22"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                        <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfX-bQ-BCj">
+                                        <rect key="frame" x="327" y="2" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="2xN-j9-LUP"/>
+                                            <constraint firstAttribute="width" constant="40" id="cxR-Dt-YNB"/>
+                                        </constraints>
+                                        <state key="normal" title="X"/>
+                                        <connections>
+                                            <action selector="closeView:" destination="v1C-Fz-1dA" eventType="touchUpInside" id="YL5-i8-ob6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.070588235289999995" green="0.18039215689999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2YF-7n-k85"/>
+                                    <constraint firstItem="rzP-r2-J52" firstAttribute="centerY" secondItem="uxy-uV-eYt" secondAttribute="centerY" id="JEq-TK-tJ5"/>
+                                    <constraint firstItem="rzP-r2-J52" firstAttribute="centerX" secondItem="uxy-uV-eYt" secondAttribute="centerX" id="Jgn-7p-e43"/>
+                                    <constraint firstAttribute="trailing" secondItem="EfX-bQ-BCj" secondAttribute="trailing" constant="8" id="PLf-ux-IbZ"/>
+                                    <constraint firstItem="EfX-bQ-BCj" firstAttribute="centerY" secondItem="uxy-uV-eYt" secondAttribute="centerY" id="r2e-qU-D0b"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6qz-cT-64t">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.054901960780000002" green="0.13725490200000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Jut-6z-h2H">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.16862745100000001" green="0.56470588239999997" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15686274510000001" green="0.17254901959999999" blue="0.2156862745" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Jut-6z-h2H" firstAttribute="centerX" secondItem="6Q3-Rc-qpy" secondAttribute="centerX" id="3Fq-a2-J1N"/>
+                            <constraint firstItem="0ib-JK-ilk" firstAttribute="trailing" secondItem="uxy-uV-eYt" secondAttribute="trailing" id="7g2-n5-DLP"/>
+                            <constraint firstItem="uxy-uV-eYt" firstAttribute="leading" secondItem="0ib-JK-ilk" secondAttribute="leading" id="E2g-nr-IfN"/>
+                            <constraint firstItem="0ib-JK-ilk" firstAttribute="bottom" secondItem="6qz-cT-64t" secondAttribute="bottom" id="IR2-oa-YPC"/>
+                            <constraint firstItem="6qz-cT-64t" firstAttribute="top" secondItem="uxy-uV-eYt" secondAttribute="bottom" id="OTO-qO-mYE"/>
+                            <constraint firstItem="uxy-uV-eYt" firstAttribute="top" secondItem="0ib-JK-ilk" secondAttribute="top" id="QtY-qs-owo"/>
+                            <constraint firstItem="Jut-6z-h2H" firstAttribute="centerY" secondItem="6Q3-Rc-qpy" secondAttribute="centerY" id="Z1s-Xr-vGU"/>
+                            <constraint firstItem="6qz-cT-64t" firstAttribute="leading" secondItem="0ib-JK-ilk" secondAttribute="leading" id="e2D-5j-KGY"/>
+                            <constraint firstItem="0ib-JK-ilk" firstAttribute="trailing" secondItem="6qz-cT-64t" secondAttribute="trailing" id="gQW-vC-z0Y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0ib-JK-ilk"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="containerView" destination="6qz-cT-64t" id="FuL-Fn-Utg"/>
+                        <outlet property="spinner" destination="Jut-6z-h2H" id="V7W-dJ-Nwr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="256-dF-85A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-146.40000000000001" y="165.96701649175412"/>
+        </scene>
+    </scenes>
+</document>

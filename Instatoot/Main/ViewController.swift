@@ -20,6 +20,30 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func testAuth(_ sender: Any) {
+        
+        let testInstance = "https://mastodon.technology"
+        var clientID = ""
+        
+        let client = Client(baseURL: testInstance)
+        let request = Clients.register(clientName: "Instatoot", redirectURI: "itoot://oauth-response/success", scopes: [.read, .write, .follow], website: nil)
+        client.run(request) { (resp) in
+            if let app = resp.value {
+                print("AppID: \(app.id)  Client ID: \(app.clientID)")
+                clientID = app.clientID
+            
+                let sb = UIStoryboard(name: "Login", bundle: nil)
+                if let vc: LoginViewController = sb.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+                    vc.baseInstanceUrl = testInstance
+                    vc.clientKey = clientID
+                    vc.modalTransitionStyle = .coverVertical
 
+                    self.present(vc, animated: true, completion: nil)
+                }
+            }
+        }
+
+    }
+    
 }
 
