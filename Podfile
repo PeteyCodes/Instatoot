@@ -9,7 +9,6 @@ target 'Instatoot' do
   # Pods for Instatoot
   pod 'Alamofire', '~> 4.7'
   pod 'Kingfisher', '~> 4.8'
-  pod 'OAuthSwift', '~> 1.2.0'
   pod 'SwiftyJSON', '~> 4.1'
   pod 'SQLite.swift', '~> 0.11.5'
 

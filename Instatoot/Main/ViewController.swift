@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, LoginViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,7 @@ class ViewController: UIViewController {
                 if let vc: LoginViewController = sb.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
                     vc.baseInstanceUrl = testInstance
                     vc.clientKey = clientID
+                    vc.delegate = self
                     vc.modalTransitionStyle = .coverVertical
 
                     self.present(vc, animated: true, completion: nil)
@@ -43,6 +44,16 @@ class ViewController: UIViewController {
             }
         }
 
+    }
+    
+    // MARK: - LoginViewControllerDelegate Methods
+    
+    func loginSuccessful(token: String) {
+        L.debug("Got auth token: \(token)")
+        
+        DispatchQueue.main.async {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
 }

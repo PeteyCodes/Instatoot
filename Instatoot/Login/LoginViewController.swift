@@ -11,17 +11,25 @@ import UIKit
 import WebKit
 
 
-class LoginViewController: UIViewController, WKNavigationDelegate, WKURLSchemeHandler, OAuthSwiftURLHandlerType  {
+protocol LoginViewControllerDelegate: class {
+    func loginSuccessful(token: String)
+}
+
+
+class LoginViewController: UIViewController, WKNavigationDelegate, OAuthSwiftURLHandlerType  {
 
     var baseInstanceUrl: String!
     var clientKey: String!
+    weak var delegate: LoginViewControllerDelegate? = nil
+    
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var webView: WKWebView!
     
     private var isFirstLoad: Bool = true
-    private var webView: WKWebView? = nil
-    
+    private var oauth2: OAuth2Swift? = nil
+
     
     // MARK: - Lifecycle
     
@@ -75,51 +83,23 @@ class LoginViewController: UIViewController, WKNavigationDelegate, WKURLSchemeHa
             if redirectUrl.absoluteString.hasPrefix("itoot") {
                 L.debug("Redirected after succesful auth! \(redirectUrl)")
                 decisionHandler(.cancel)
+                return
             }
         }
         decisionHandler(.allow)
-        return
     }
-    
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        self.webView?.evaluateJavaScript("document.documentElement.outerHTML.toString()", completionHandler: { (html, error) in
-            if html != nil {
-                L.debug("Page Loaded: \(self.webView!.url)\nHTML: \(html!)")
-            }
-        })
-    }
-    
-    // MARK: - WKURLSchemeHandler Methods
-    
-    func webView(_ webView: WKWebView, start urlSchemeTask: WKURLSchemeTask) {
-        // If this method was called, we successfully authenticated
-        L.debug("Authenticated: \(urlSchemeTask.request.url?.absoluteString)")
-    }
-    
-    func webView(_ webView: WKWebView, stop urlSchemeTask: WKURLSchemeTask) {
-        L.debug("webView stop")
-    }
-    
+        
+
     // MARK: - Private Methods
     
     private func loadAuthPage() {
-        let conf = WKWebViewConfiguration()
-        conf.setURLSchemeHandler(self, forURLScheme: "itoot")
+        self.webView.navigationDelegate = self
         
-        self.webView = WKWebView(frame: self.containerView.bounds, configuration: conf)
-        self.webView!.navigationDelegate = self
-        self.containerView.addSubview(self.webView!)
-        
-        D.instance.authenticate(clientKey: self.clientKey, baseUrl: self.baseInstanceUrl, handlerVC: self, onCompletion: {
-            L.debug("Successfully authenticated!!")
-            
-            // TODO
-            
-        }) { (error) in
-            L.debug("Error authenticating: \(error)")
+        let urlString = "\(self.baseInstanceUrl!)/oauth/authorize?client_id=\(self.clientKey!)&response_type=code&redirect_uri=itoot://oauth-response/success&scope=read%20write%20follow&state=Instatoot"
+
+        if let url = URL(string: urlString) {
+            self.webView.load(URLRequest(url: url))
         }
-        
-        
     }
     
     private func refreshView() {
